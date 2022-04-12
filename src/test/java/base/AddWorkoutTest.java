@@ -14,7 +14,7 @@ public class AddWorkoutTest extends BaseTest{
     RunWorkoutModel testWorkout = new RunWorkoutModel();
 
     @Test(description = "Add a workout")
-    public void addWorkoutTest() throws ParseException {
+    public void addWorkoutTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
                 .validCredentialsLogin()

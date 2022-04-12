@@ -5,8 +5,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import steps.PostconditionSteps;
 
-import java.text.ParseException;
-
 
 public class UpdateAddedWorkoutTest extends BaseTest {
 
@@ -21,7 +19,7 @@ public class UpdateAddedWorkoutTest extends BaseTest {
             .build();
 
     @Test(description = "Add a new workout and update it")
-    public void updateAddedWorkoutTest() throws ParseException {
+    public void updateAddedWorkoutTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
                 .validCredentialsLogin()
