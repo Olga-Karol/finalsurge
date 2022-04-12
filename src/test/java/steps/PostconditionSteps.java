@@ -35,7 +35,7 @@ public class PostconditionSteps extends BaseStep {
         assertPageIsLoaded(calendarPage);
         List<WebElement> workouts = driver.findElements(WORKOUT_TITLE_IN_CALENDAR);
         for (WebElement workout : workouts) {
-            String workoutTitle = defaultParser(workout.getText(), COLON, 1);
+            String workoutTitle = defaultParser(workout.getText(), COLON, 0);
             if (workoutTitle.equals(testWorkoutName))
                 try {
                     deleteAddedWorkout(workoutTitle);
