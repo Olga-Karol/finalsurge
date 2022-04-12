@@ -9,7 +9,7 @@ public class AddVitalsTest extends BaseTest {
 
     VitalsModel testVitals = new VitalsModel();
 
-    @Test(description = "Add a vital")
+    @Test(description = "Add a vital", retryAnalyzer = utils.RetryAnalyzer.class)
     public void addVitalsTest() {
         mainSteps
                 .openFinalSurgeLoginPage()

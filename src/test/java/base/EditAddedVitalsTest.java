@@ -14,7 +14,7 @@ public class EditAddedVitalsTest extends BaseTest {
             .SleepHours(10)
             .build();
 
-    @Test(description = "Add a new Daily Vital and update it")
+    @Test(description = "Add a new Daily Vital and update it", retryAnalyzer = utils.RetryAnalyzer.class)
     public void editVitalsTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
