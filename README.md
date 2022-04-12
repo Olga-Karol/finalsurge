@@ -71,7 +71,7 @@ In the final education project the next next patterns have been implemented:
 | 2             | update some data -> click 'Edit Vitals'                                   | 'Daily Vitals' page opens                         |
 | 3             | click 'Custom View'                                                       | 'Custom View' filter expands                      |
 | 4             | fill 'Date' (from step #6) in 'Start Date' and 'End Date' -> click 'View' | Only one added vitals is showing                  |
-| 4             | make sure filled vitals data matches data on 'Details' page               | filled vitals data matches data on 'Details' page |
+| 5             | make sure filled vitals data matches data on 'Details' page               | filled vitals data matches data on 'Details' page |
 | Postcondition | remove added vitals                                                       | added test vitals was removed                     |
 
 
