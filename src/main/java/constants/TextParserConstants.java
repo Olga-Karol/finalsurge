@@ -22,5 +22,5 @@ public class TextParserConstants {
     public static final String KCAL = "kCal";
     public static final String PERCENT = "%";
     public static final String HOURS = "hrs";
-
+    public static final String DASH = "-";
 }

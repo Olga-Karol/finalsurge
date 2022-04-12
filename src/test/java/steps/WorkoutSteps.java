@@ -21,6 +21,7 @@ import static constants.SaveButtonLabels.ADD_WORKOUT_BUTTON_LABEL;
 import static constants.DateTimeParser.*;
 import static constants.LabelsWorkoutForm.*;
 import static constants.SaveButtonLabels.UPDATE_WORKOUT_BUTTON_LABEL;
+import static constants.TextParserConstants.DASH;
 import static constants.WorkoutLeftMenuLabels.WORKOUT_SUBTYPE;
 import static constants.WorkoutLeftMenuLabels.WORKOUT_TYPE;
 import static utils.ConvertDateFormat.*;
@@ -137,8 +138,8 @@ public class WorkoutSteps extends BaseStep {
         actualModel.setWorkoutName(new DetailsComponent(driver, TEXT_NAME_WORKOUT_FIELD_LOCATOR).getValue());
         actualModel.setWorkoutType(new DetailsComponent(driver, TEXT_ACTIVITY_TYPE_FIELD_LOCATOR).getValue());
         String dateTimeValue = new DetailsComponent(driver, TEXT_DATETIME_FIELD_LOCATOR).getValue();
-        actualModel.setDate(convertDateTime(dateTimeValue, INPUT_DATETIME_FORMAT, OUTPUT_DATE_FORMAT));
-        actualModel.setTimeOfDay(convertDateTime(dateTimeValue, INPUT_DATETIME_FORMAT, OUTPUT_TIME_FORMAT));
+        actualModel.setDate(convertDateTime(defaultParser(dateTimeValue, DASH, 0), INPUT_DATETIME_FORMAT, OUTPUT_DATE_FORMAT));
+        actualModel.setTimeOfDay(defaultParser(dateTimeValue, DASH, 1));
 
         String workoutDesc = new DetailsComponent(driver, TEXT_WORKOUT_DESCRIPTION_LOCATOR).getValue();
         actualModel.setWorkoutDescription(getWorkoutDescData(workoutDesc).get(0));
