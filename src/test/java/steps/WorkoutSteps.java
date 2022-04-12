@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.UpdateWorkoutPage;
 import pages.WorkoutDetailsPage;
-import java.text.ParseException;
 import static components.forms.detailsforms.DetailsComponent.*;
 import static components.forms.detailsforms.DetailsComponent.TEXT_ACTIVITY_TYPE_FIELD_LOCATOR;
 import static components.forms.detailsforms.DetailsComponent.TEXT_DATETIME_FIELD_LOCATOR;
@@ -74,7 +73,7 @@ public class WorkoutSteps extends BaseStep {
 
 
     @Step("Make sure filled workout data matches to data on the Details page")
-    public void validateAddedWorkout(RunWorkoutModel expectedModel) throws ParseException {
+    public void validateAddedWorkout(RunWorkoutModel expectedModel) {
         workoutDetailsPage.openPage();
         RunWorkoutModel actualModel = getActualWorkout();
         Assert.assertEquals(
@@ -132,7 +131,7 @@ public class WorkoutSteps extends BaseStep {
         new InputHeartrate(driver, CALORIES_BURNED).insert(String.valueOf(runWorkoutModel.getCaloriesBurned()));
     }
 
-    private RunWorkoutModel getActualWorkout() throws ParseException {
+    private RunWorkoutModel getActualWorkout() {
         RunWorkoutModel actualModel = new RunWorkoutModel();
 
         actualModel.setWorkoutName(new DetailsComponent(driver, TEXT_NAME_WORKOUT_FIELD_LOCATOR).getValue());
