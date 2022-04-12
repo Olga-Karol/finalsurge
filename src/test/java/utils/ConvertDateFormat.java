@@ -2,6 +2,8 @@ package utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class ConvertDateFormat {
@@ -18,4 +20,11 @@ public class ConvertDateFormat {
         String output = formatter.format(parsedInput);
         return output;
     }
+
+    public static String formatDate(String input, String inputFormat, String outputFormat){
+        LocalDate date = LocalDate.parse(input, DateTimeFormatter.ofPattern(inputFormat));
+        String output = date.format(DateTimeFormatter.ofPattern(outputFormat));
+        return output;
+    }
+
 }
