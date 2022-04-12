@@ -27,7 +27,6 @@ public class BaseTest {
     public static String EMAIL = PropertiesUtils.getEnv("valid_email");
     public static String PASSWORD = PropertiesUtils.getEnv("valid_password");
 
-//TODO Вынести driver в констатнту, implicit check 0
     @BeforeMethod
     public void setup(ITestContext iTestContext){
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
@@ -47,5 +46,4 @@ public class BaseTest {
         driver.close();
         driver.quit();
     }
-
 }
