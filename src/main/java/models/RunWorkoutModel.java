@@ -18,7 +18,7 @@ public class RunWorkoutModel{
     @Builder.Default
     public String Date = convertCurrentTime();
     @Builder.Default
-    public String TimeOfDay = "05:45 AM";
+    public String TimeOfDay = "5:45 AM";
     @Builder.Default
     public String WorkoutName = "My test workout";
     @Builder.Default

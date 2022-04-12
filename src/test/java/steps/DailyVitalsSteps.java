@@ -17,9 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pages.VitalsPage;
-
 import java.util.List;
-
 import static constants.CreationFormTitles.DAILY_VITALS_ADD_FORM_TITLE;
 import static constants.DeleteLink.DELETE_LINK_TITLE;
 import static constants.EditFormTitles.EDIT_VITALS_TITLE;
