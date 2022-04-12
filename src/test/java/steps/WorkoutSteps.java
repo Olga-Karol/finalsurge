@@ -139,10 +139,6 @@ public class WorkoutSteps extends BaseStep {
         actualModel.setWorkoutName(new DetailsComponent(driver, TEXT_NAME_WORKOUT_FIELD_LOCATOR).getValue());
         actualModel.setWorkoutType(new DetailsComponent(driver, TEXT_ACTIVITY_TYPE_FIELD_LOCATOR).getValue());
         String dateTimeValue = new DetailsComponent(driver, TEXT_DATETIME_FIELD_LOCATOR).getValue();
-        String dayValue = defaultParser(defaultParser(dateTimeValue, DASH, 0), ",", 1 );
-        String yearValue = defaultParser(defaultParser(dateTimeValue, DASH, 0), ",", 2 );
-        String dateValue = dayValue + SPACE + yearValue;
-        actualModel.setDate(formatDate(dateValue, INPUT_DATETIME_FORMAT, OUTPUT_DATE_FORMAT));
         actualModel.setTimeOfDay(defaultParser(dateTimeValue, DASH, 1));
 
         String workoutDesc = new DetailsComponent(driver, TEXT_WORKOUT_DESCRIPTION_LOCATOR).getValue();

@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import static constants.DateTimeParser.OUTPUT_DATE_FORMAT;
 import static constants.WorkoutLeftMenuLabels.WORKOUT_SUBTYPE;
@@ -11,7 +12,8 @@ import static constants.WorkoutLeftMenuLabels.WORKOUT_TYPE;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Builder
 public class RunWorkoutModel{
 
@@ -65,4 +67,42 @@ public class RunWorkoutModel{
         return date.format(formatter);
     }
 
+    @Override
+    public String toString() {
+        return "RunWorkoutModel{" +
+                "TimeOfDay='" + TimeOfDay + '\'' +
+                ", WorkoutName='" + WorkoutName + '\'' +
+                ", WorkoutDescription='" + WorkoutDescription + '\'' +
+                ", PlannedDistance=" + PlannedDistance +
+                ", PlannedDistanceUnit='" + PlannedDistanceUnit + '\'' +
+                ", PlannedDuration='" + PlannedDuration + '\'' +
+                ", Distance=" + Distance +
+                ", DistanceUnit='" + DistanceUnit + '\'' +
+                ", Duration='" + Duration + '\'' +
+                ", Pace='" + Pace + '\'' +
+                ", PaceUnit='" + PaceUnit + '\'' +
+                ", OverallPlace=" + OverallPlace +
+                ", AgeGroupPlace=" + AgeGroupPlace +
+                ", PerceivedEffort='" + PerceivedEffort + '\'' +
+                ", MinHR=" + MinHR +
+                ", AvgHR=" + AvgHR +
+                ", MaxHR=" + MaxHR +
+                ", CaloriesBurned=" + CaloriesBurned +
+                ", RadioButtonOption='" + RadioButtonOption + '\'' +
+                ", WorkoutType='" + WorkoutType + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RunWorkoutModel that = (RunWorkoutModel) o;
+        return Double.compare(that.PlannedDistance, PlannedDistance) == 0 && Double.compare(that.Distance, Distance) == 0 && OverallPlace == that.OverallPlace && AgeGroupPlace == that.AgeGroupPlace && MinHR == that.MinHR && AvgHR == that.AvgHR && MaxHR == that.MaxHR && CaloriesBurned == that.CaloriesBurned && Objects.equals(TimeOfDay, that.TimeOfDay) && Objects.equals(WorkoutName, that.WorkoutName) && Objects.equals(WorkoutDescription, that.WorkoutDescription) && Objects.equals(PlannedDistanceUnit, that.PlannedDistanceUnit) && Objects.equals(PlannedDuration, that.PlannedDuration) && Objects.equals(DistanceUnit, that.DistanceUnit) && Objects.equals(Duration, that.Duration) && Objects.equals(Pace, that.Pace) && Objects.equals(PaceUnit, that.PaceUnit) && Objects.equals(PerceivedEffort, that.PerceivedEffort) && Objects.equals(RadioButtonOption, that.RadioButtonOption) && Objects.equals(WorkoutType, that.WorkoutType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(TimeOfDay, WorkoutName, WorkoutDescription, PlannedDistance, PlannedDistanceUnit, PlannedDuration, Distance, DistanceUnit, Duration, Pace, PaceUnit, OverallPlace, AgeGroupPlace, PerceivedEffort, MinHR, AvgHR, MaxHR, CaloriesBurned, RadioButtonOption, WorkoutType);
+    }
 }
