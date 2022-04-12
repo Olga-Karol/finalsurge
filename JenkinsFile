@@ -10,7 +10,7 @@ pipeline {
         stage('tests') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/Olga-Karol/saucedemo.git'
+                git 'https://github.com/Olga-Karol/finalsurge.git'
 
                 // Run Maven on a Unix agent.
                 bat "mvn clean test -Dmaven.test.failure.ignore=true"
