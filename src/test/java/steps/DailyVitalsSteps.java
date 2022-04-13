@@ -119,7 +119,7 @@ public class DailyVitalsSteps extends BaseStep {
     private void fillVitalsForm(VitalsModel vitalsModel) {
         new InputVitals(driver, DATE).insert(vitalsModel.getDate());
         new InputVitals(driver, STEPS).insert(String.valueOf(vitalsModel.getSteps()));
-        new InputVitals(driver, CALORIES_CONCUMED).insert(String.valueOf(vitalsModel.getCaloriesConsumed()));
+        new InputVitals(driver, CALORIES_CONSUMED).insert(String.valueOf(vitalsModel.getCaloriesConsumed()));
         new InputVitals(driver, WEIGHT).insert(String.valueOf(vitalsModel.getWeight()));
         new DropdownVital(driver, WEIGHT).selectDropdownOption(vitalsModel.getWeightKg());
         new InputVitals(driver, BODY_FAT).insert(String.valueOf(vitalsModel.getBodyFat()));

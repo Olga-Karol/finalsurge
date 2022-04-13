@@ -10,7 +10,6 @@ public class CalendarPage extends BasePage{
     public static final By HEADER_IN_BREADCRUMBS = By.xpath("//li/a[text() = 'Training Calendar']");
 
 
-
     public CalendarPage(WebDriver driver) {
         super(driver);
     }
