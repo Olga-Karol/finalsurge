@@ -168,6 +168,7 @@ public class DailyVitalsSteps extends BaseStep {
     }
 
     private void openEditForm(List<WebElement> testVitals){
-        testVitals.get(0).click();
+        String linkName = testVitals.get(0).getText();
+        new Link(driver, linkName).click();
     }
 }
