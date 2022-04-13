@@ -8,12 +8,11 @@ import components.mainmenu.submenu.SubMenuItem;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.*;
-
 import static base.BaseTest.EMAIL;
 import static base.BaseTest.PASSWORD;
 import static constants.MainMenuLabels.*;
 import static constants.ProfileElements.LOG_OUT;
-import static constants.WorkoutLeftMenuLabels.ADD_NEW_ACTIVITY;
+
 
 public class MainSteps extends BaseStep{
 
