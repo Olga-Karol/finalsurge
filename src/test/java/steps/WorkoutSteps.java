@@ -18,11 +18,10 @@ import static components.forms.detailsforms.DetailsComponent.TEXT_DATETIME_FIELD
 import static components.forms.detailsforms.DetailsComponent.TEXT_NAME_WORKOUT_FIELD_LOCATOR;
 import static constants.CreationFormTitles.ADD_NEW_WORKOUT_FORM_TITLE;
 import static constants.SaveButtonLabels.ADD_WORKOUT_BUTTON_LABEL;
-import static constants.DateTimeParser.*;
+import static constants.DateTimeFormats.*;
 import static constants.LabelsWorkoutForm.*;
 import static constants.SaveButtonLabels.UPDATE_WORKOUT_BUTTON_LABEL;
 import static constants.TextParserConstants.DASH;
-import static constants.TextParserConstants.SPACE;
 import static constants.WorkoutLeftMenuLabels.WORKOUT_SUBTYPE;
 import static constants.WorkoutLeftMenuLabels.WORKOUT_TYPE;
 import static utils.ConvertDateFormat.*;
@@ -132,6 +131,7 @@ public class WorkoutSteps extends BaseStep {
         new InputHeartrate(driver, AVG_HR).insert(String.valueOf(runWorkoutModel.getAvgHR()));
         new InputHeartrate(driver, CALORIES_BURNED).insert(String.valueOf(runWorkoutModel.getCaloriesBurned()));
     }
+    //Tuesday, April 12, 2022 - 6:00 AM
 
     private RunWorkoutModel getActualWorkout() {
         RunWorkoutModel actualModel = new RunWorkoutModel();
@@ -140,6 +140,7 @@ public class WorkoutSteps extends BaseStep {
         actualModel.setWorkoutType(new DetailsComponent(driver, TEXT_ACTIVITY_TYPE_FIELD_LOCATOR).getValue());
         String dateTimeValue = new DetailsComponent(driver, TEXT_DATETIME_FIELD_LOCATOR).getValue();
         actualModel.setTimeOfDay(defaultParser(dateTimeValue, DASH, 1));
+        actualModel.setDate(formatDate(defaultParser(dateTimeValue, DASH, 0), INPUT_DATETIME_FORMAT,OUTPUT_DATE_FORMAT));
 
         String workoutDesc = new DetailsComponent(driver, TEXT_WORKOUT_DESCRIPTION_LOCATOR).getValue();
         actualModel.setWorkoutDescription(getWorkoutDescData(workoutDesc).get(0));
