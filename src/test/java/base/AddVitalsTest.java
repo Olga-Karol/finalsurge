@@ -1,5 +1,8 @@
 package base;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import models.VitalsModel;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -9,7 +12,9 @@ public class AddVitalsTest extends BaseTest {
 
     VitalsModel testVitals = new VitalsModel();
 
-    @Test(description = "Add a vital", retryAnalyzer = utils.RetryAnalyzer.class)
+    @Severity(SeverityLevel.BLOCKER)
+    @Description ("Add a vital")
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void addVitalsTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
@@ -20,7 +25,9 @@ public class AddVitalsTest extends BaseTest {
                 .validateAddedVitals(testVitals);
     }
 
-    @AfterMethod(alwaysRun = true, description = "Remove added Daily Vital")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Remove added Daily Vital")
+    @AfterMethod(alwaysRun = true)
     public void removeAddedWorkout() {
         mainSteps
                 .openDailyVitalsPage()

@@ -4,7 +4,7 @@ public class LabelsVitalsForm {
 
     public static final String DATE = "Date";
     public static final String STEPS = "Steps";
-    public static final String CALORIES_CONCUMED = "Calories Consumed";
+    public static final String CALORIES_CONSUMED = "Calories Consumed";
     public static final String WEIGHT = "Weight";
     public static final String BODY_FAT = "Body Fat %";
     public static final String WATER = "Water %";

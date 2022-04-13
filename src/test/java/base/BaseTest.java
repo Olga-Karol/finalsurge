@@ -8,12 +8,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import steps.DailyVitalsSteps;
 import steps.MainSteps;
-import steps.PostconditionSteps;
 import steps.WorkoutSteps;
 import utils.CapabilitiesGenerator;
 import utils.PropertiesUtils;
 import utils.TestListener;
 import java.time.Duration;
+
+import static constants.BaseConstants.ATTRIBUTE_KEY_DRIVER;
+import static constants.BaseConstants.IMPLICIT_WAIT_DURATION_SEC;
 
 
 @Listeners({TestListener.class})
@@ -30,8 +32,8 @@ public class BaseTest {
     @BeforeMethod
     public void setup(ITestContext iTestContext){
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
-        setContextAttribute(iTestContext, "driver", driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        setContextAttribute(iTestContext, ATTRIBUTE_KEY_DRIVER, driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT_DURATION_SEC));
         mainSteps = new MainSteps(driver);
         workoutSteps = new WorkoutSteps(driver);
         dailyVitalsSteps = new DailyVitalsSteps(driver);

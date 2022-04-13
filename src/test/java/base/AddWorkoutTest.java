@@ -1,5 +1,8 @@
 package base;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import models.RunWorkoutModel;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -13,7 +16,9 @@ public class AddWorkoutTest extends BaseTest{
     PostconditionSteps postconditionSteps;
     RunWorkoutModel testWorkout = new RunWorkoutModel();
 
-    @Test(description = "Add a workout")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Add a workout")
+    @Test
     public void addWorkoutTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
@@ -23,7 +28,9 @@ public class AddWorkoutTest extends BaseTest{
                 .validateAddedWorkout(testWorkout);
     }
 
-    @AfterMethod(alwaysRun=true, description = "Remove all added test workout")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Remove all added test workout")
+    @AfterMethod(alwaysRun=true)
     public void removeAddedWorkout(){
         postconditionSteps = new PostconditionSteps(driver);
         String testWorkoutName = testWorkout.getWorkoutName();

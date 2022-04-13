@@ -1,6 +1,9 @@
 package base;
 
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import models.VitalsModel;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -14,7 +17,9 @@ public class EditAddedVitalsTest extends BaseTest {
             .SleepHours(10)
             .build();
 
-    @Test(description = "Add a new Daily Vital and update it", retryAnalyzer = utils.RetryAnalyzer.class)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Add a new Daily Vital and update it")
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void editVitalsTest() {
         mainSteps
                 .openFinalSurgeLoginPage()
@@ -26,7 +31,9 @@ public class EditAddedVitalsTest extends BaseTest {
                 .validateAddedVitals(updatedVitals);
     }
 
-    @AfterMethod(alwaysRun = true, description = "Remove added Daily Vital")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Remove added Daily Vital")
+    @AfterMethod(alwaysRun = true)
     public void removeAddedWorkout() {
         mainSteps
                 .openDailyVitalsPage()
