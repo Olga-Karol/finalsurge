@@ -1,6 +1,6 @@
 # Final project
 
-In the final education project the next next patterns have been implemented:
+In the final education project the main steps have been realized. The next patterns have been implemented:
 
 1. Page object
 2. Steps
