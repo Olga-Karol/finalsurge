@@ -19,11 +19,12 @@ public class LoginPage extends BasePage{
 
     public LoginPage(WebDriver driver) {
         super(driver);
+        setExplicitlyWaitTimeout(10);
     }
 
     @Override
     public void waitPageLoaded(){
-        explicitlyWait.until(ExpectedConditions.presenceOfElementLocated(LOGIN_BUTTON));
+        explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(LOGIN_BUTTON));
        }
 
     public void authentication(String email, String password){

@@ -1,5 +1,7 @@
 package base;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
@@ -32,6 +34,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup(ITestContext iTestContext){
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
+        driver.manage().deleteAllCookies();
         setContextAttribute(iTestContext, ATTRIBUTE_KEY_DRIVER, driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT_DURATION_SEC));
         mainSteps = new MainSteps(driver);
