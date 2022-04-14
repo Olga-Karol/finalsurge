@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="tests" thread-count="5">
+    <listeners>
+        <listener class-name="utils.TestListener" />
+    </listeners>
+    <test name="Add new workout test">
+        <classes>
+            <class name="base.AddWorkoutTest" />
+        </classes>
+    </test>
+    <test name="Updated added workout">
+        <classes>
+            <class name="base.UpdateAddedWorkoutTest" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="Add daily vitals test">
+        <classes>
+            <class name="base.AddVitalsTest" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="Edit daily vitals test">
+        <classes>
+            <class name="base.EditAddedVitalsTest" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="Log out test">
+        <classes>
+            <class name="base.LogoutTest" />
+        </classes>
+    </test> <!-- Test -->
+</suite>
